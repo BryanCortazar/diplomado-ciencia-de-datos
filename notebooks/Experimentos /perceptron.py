@@ -1,4 +1,6 @@
 import numpy as np
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 class PerceptronVisual:
@@ -16,7 +18,7 @@ class PerceptronVisual:
 
     def train_and_plot(self, X, y, title):
         # Reiniciar pesos para cada compuerta
-        self.weights = np.array([0.5, -0.5]) # Pesos iniciales arbitrarios para ver la recta cruzando el plano
+        self.weights = np.array([0.8, -0.9]) # Pesos iniciales arbitrarios para ver la recta cruzando el plano
         self.bias = -0.2
         
         plt.figure(figsize=(6, 6))
@@ -57,6 +59,7 @@ class PerceptronVisual:
             plt.ylabel("X2")
             plt.legend()
             
+           # plt.savefig(f"epoca_{epoch+1}_{title[:10].replace(' ', '_')}.png")
             plt.pause(0.8) # Pausa dramática para que los alumnos vean el movimiento en vivo
             
             if not error_flag:
